@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Corporativo - Workshop de Tecnologia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="main-header">
+      <div class="header-content">
+        <h1>📊 Planejamento Orçamentário & Logístico</h1>
+        <p>Workshop Anual de Inovação e Tecnologia — Análise Consolidada</p>
+      </div>
+      <div class="header-controls">
+        <label for="categoryFilter">Filtrar Visão:</label>
+        <select id="categoryFilter">
+          <option value="all">Todas as Categorias</option>
+          <option value="Infraestrutura">Infraestrutura</option>
+          <option value="Pessoas">Pessoas</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Operacional">Operacional</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Cards KPI -->
+    <section class="kpi-grid">
+      <div class="kpi-card primary">
+        <div class="kpi-icon">💰</div>
+        <div class="kpi-data">
+          <span>Orçamento Total Previsto</span>
+          <h2 id="totalBudget">R$ 58.500,00</h2>
+        </div>
+      </div>
+      <div class="kpi-card success">
+        <div class="kpi-icon">🎯</div>
+        <div class="kpi-data">
+          <span>Custo Executado / Pago</span>
+          <h2 id="totalExecuted">R$ 41.200,00</h2>
+        </div>
+      </div>
+      <div class="kpi-card warning">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-data">
+          <span>Participantes Esperados</span>
+          <h2>250 Pessoas</h2>
+        </div>
+      </div>
+      <div class="kpi-card info">
+        <div class="kpi-icon">⚡</div>
+        <div class="kpi-data">
+          <span>Custo Médio por Pessoa</span>
+          <h2>R$ 234,00</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de Gráficos -->
+    <main class="charts-container">
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Composição do Orçamento por Categoria</h3>
+          <span class="badge">Doughnut Chart</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartDoughnut"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Orçamento Previsto vs. Custo Realizado</h3>
+          <span class="badge">Grouped Bar Chart</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartComparison"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Evolução do Salto de Caixa no Tempo</h3>
+          <span class="badge">Area Line Chart</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartTimeline"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Avaliação de Impacto e Satisfação dos Itens</h3>
+          <span class="badge">Radar Chart</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartRadar"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Volume de Inscrições x Metas Mensais</h3>
+          <span class="badge">Combo Chart (Bar + Line)</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartRegistrations"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Distribuição da Alocação de Equipe (Horas)</h3>
+          <span class="badge">Polar Area Chart</span>
+        </div>
+        <div class="canvas-box">
+          <canvas id="chartPolar"></canvas>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
